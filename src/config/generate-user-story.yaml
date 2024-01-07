@@ -1,0 +1,60 @@
+openapi: "3.0.0"
+info:
+  title: "LLM Integration Module API"
+  description: "API for generating user stories using Language Learning Models."
+  version: "1.0.0"
+
+servers:
+  - url: "http://localhost:5000/"
+    description: "Local development server"
+
+paths:
+  /generate-user-story:
+    post:
+      summary: "Generate User Story"
+      description: "Generates a user story based on the input text using a selected LLM."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input_text:
+                  type: string
+                  description: "The input text based on which to generate a user story."
+                  example: "As a user, I want to be able to input text and receive a generated user story."
+      responses:
+        "200":
+          description: "Successful response with generated user story."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_story:
+                    type: string
+                    description: "The generated user story."
+                    example: "In response to the user's request, the system shall generate a user story that captures the essence of the input text."
+        "400":
+          description: "Bad request when input text is missing or invalid."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: "Error message detailing the nature of the bad request."
+                    example: "No input text provided"
+        "500":
+          description: "Internal server error"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: "Generic server error message"
+                    example: "Internal server error"

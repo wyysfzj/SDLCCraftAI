@@ -1,0 +1,37 @@
+{
+    "LLMs": [
+        {
+            "name": "OpenAI_GPT",
+            "mode": "library",
+            "endpoint": "",
+            "api_key": "Your_OpenAI_API_Key",
+            "additional_params": {
+                "model": "text-davinci-003",
+                "temperature": 0.7,
+                "max_tokens": 150,
+                "top_p": 1,
+                "frequency_penalty": 0,
+                "presence_penalty": 0
+            }
+        },
+        {
+            "name": "Azure_OpenAI",
+            "mode": "restful",
+            "endpoint": "https://api.azure.com/v1/engines/gpt-3.5-turbo/completions",
+            "api_key": "Your_Azure_API_Key",
+            "headers": {
+                "Content-Type": "application/json",
+                "Ocp-Apim-Subscription-Key": "Your_Azure_Subscription_Key"
+            },
+            "additional_params": {
+                "model": "gpt-3.5-turbo",
+                "temperature": 0.7,
+                "max_tokens": 150,
+                "top_p": 1,
+                "frequency_penalty": 0,
+                "presence_penalty": 0
+            }
+        }
+    ],
+    "selectedLLM": "OpenAI_GPT"
+}
