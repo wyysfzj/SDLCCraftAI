@@ -1,0 +1,3 @@
+Generate a user story for the user requirement:
+User Requirement: {user_requirement}
+Context: {context}

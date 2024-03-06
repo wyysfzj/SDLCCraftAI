@@ -1,0 +1,4 @@
+Generate context for the user requirement:
+User Requirement: {user_requirement}
+Project: {project}
+Additional Context: {additional_context}
